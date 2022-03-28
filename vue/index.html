@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <p>Hello,{{name}}</p>
+        <button @click="name = 'xiaoming'">CHANGE</button>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                name: "hanfeiyang"
+            },
+            watch: {
+                name: {
+                    immediate: true,
+                    handler(newValue, oldValue) {
+                        console.log(newValue, oldValue)
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>
